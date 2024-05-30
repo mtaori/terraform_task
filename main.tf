@@ -63,9 +63,9 @@ resource "aws_sns_topic" "sns_conformation" {
   name = "sns_conformation"
 }
 resource "aws_sns_topic_subscription" "email_send" {
-   topic_arn = "arn:aws:sns:ap-south-1:381491902899:sns_conformation"
+   topic_arn = var.topic_arn
    protocol = "email"
-   endpoint =  "mtaori197@gmail.com"
+   endpoint =  var.endpoint
    confirmation_timeout_in_minutes = 10
    
 }
